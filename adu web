@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-top: 1px solid #ccc;
+        }
+        .footer img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-section">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+        <button class="btn" onclick="handleLogin()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showRegistration()">Register here</a></p>
+    </div>
+
+    <div class="container hidden" id="registration-section">
+        <h2>Register</h2>
+        <input type="text" id="reg-name" placeholder="Full Name" required>
+        <input type="email" id="reg-email" placeholder="Email" required>
+        <input type="text" id="reg-phone" placeholder="Phone Number (Optional)">
+        <input type="text" id="reg-school" placeholder="School Name">
+        <input type="text" id="reg-std" placeholder="Standard">
+        <input type="text" id="reg-division" placeholder="Division">
+        <input type="password" id="reg-password" placeholder="Password" required>
+        <button class="btn" onclick="handleRegistration()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <div class="container hidden" id="dashboard-section">
+        <h2>Welcome to the Dashboard!</h2>
+        <p>Content for logged-in users will appear here.</p>
+        <button class="btn" onclick="handleLogout()">Logout</button>
+    </div>
+
+    <div class="footer">
+        <img src="https://photos.google.com/photo/AF1QipMmuC21K05WY3TD1Iyl-4uCVXqpuKdunctAl7d1" alt="Owner Picture">
+        <p><strong>Owner:</strong> Dipak</p>
+        <p><strong>Email:</strong> dipaksolanki25122009@gmail.com</p>
+    </div>
+
+    <script>
+        function showRegistration() {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('registration-section').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('registration-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+
+        function handleLogin() {
+            // Placeholder login logic
+            alert('Logged in successfully! Redirecting to the dashboard.');
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('dashboard-section').classList.remove('hidden');
+        }
+
+        function handleRegistration() {
+            // Placeholder registration logic
+            alert('Registration successful! Please log in.');
+            showLogin();
+        }
+
+        function handleLogout() {
+            alert('You have logged out.');
+            document.getElementById('dashboard-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
