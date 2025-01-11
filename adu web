@@ -53,10 +53,17 @@
             border-radius: 50%;
             margin-bottom: 10px;
         }
+        .website-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container" id="login-section">
+        <div class="website-title">Educational Website</div>
         <h2>Login</h2>
         <input type="email" id="login-email" placeholder="Enter your email" required>
         <input type="password" id="login-password" placeholder="Enter your password" required>
